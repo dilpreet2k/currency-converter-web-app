@@ -1,0 +1,12 @@
+<div class="sticky">
+  <mat-toolbar>
+    <mat-icon>paid</mat-icon>
+    <a routerLink="/currencies">
+      My Currency App
+    </a>
+    <button (click)="switchMode()" mat-button class="navs" aria-label="Example icon-button with menu icon">
+      <mat-icon *ngIf="isDarkMode">dark_mode</mat-icon>
+      <mat-icon *ngIf="!isDarkMode">light_mode</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>

@@ -1,0 +1,10 @@
+<mat-tab-group>
+    <mat-tab label="All Currencies">
+        <app-currency-docket (changedCurrencyPreferedStatus)="handleUserPrefChange($event)"
+            [currencyList]="allCurrencies"></app-currency-docket>
+    </mat-tab>
+    <mat-tab label="My Currencies">
+        <app-currency-docket (changedCurrencyPreferedStatus)="handleUserPrefChange($event)"
+            [currencyList]="userPreferedCurrencies"></app-currency-docket>
+    </mat-tab>
+</mat-tab-group>

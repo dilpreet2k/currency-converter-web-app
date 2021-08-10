@@ -1,0 +1,16 @@
+<div *ngIf="currencyList">
+  <mat-list *ngFor="let currency of currencyList | keyvalue">
+    <div class="row list-item">
+      <mat-list-item role="listitem">{{currency.key}}
+        <button matTooltipPosition="above" matTooltip="Add/remove currency from favorite list" (click)="togglePreferedCurrency(currency?.key, currency?.value)" mat-fab color="primary">
+          <mat-icon *ngIf="!currency?.value">favorite_border</mat-icon>
+          <mat-icon *ngIf="currency?.value">favorite</mat-icon>
+        </button>
+
+        <button matTooltipPosition="above" matTooltip="Navigate to convert currency" (click)="navigateToConvertCurrency(currency?.key)" mat-fab color="primary">
+          <mat-icon>swipe</mat-icon>
+        </button>
+      </mat-list-item>
+    </div>
+  </mat-list>
+</div>

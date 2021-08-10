@@ -1,0 +1,28 @@
+<h1>Convert Currencies</h1>
+<a routerLink="/currencies">
+    <button type="button" mat-fab color="primary">
+        &lt; &lt; All Currencies
+    </button>
+</a>
+
+<div class="list-item">
+    <form class="form-emp" [formGroup]="currencyForm">
+        {{baseSelectedCurrency.primary}}
+        <input formControlName="primary_currency_amount" min=0 (change)="fetchLatestCurrencyData('primary')"
+            type="number" placeholder="Enter amount here">
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a currency</mat-label>
+                <mat-select (selectionChange)="fetchLatestCurrencyData('primary')"
+                    [(value)]="baseSelectedCurrency.secondary">
+                    <mat-option *ngFor="let currency of currencies | keyvalue" [value]="currency.key">
+                        {{currency.key}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <input formControlName="secondary_currency_amount" min=0 type="number"
+                (change)="fetchLatestCurrencyData('secondary')" placeholder="Enter amount here">
+        </div>
+    </form>
+    <span>Note: Please make sure a currency is selected and the base currency is valid,Thanks.</span>
+</div>

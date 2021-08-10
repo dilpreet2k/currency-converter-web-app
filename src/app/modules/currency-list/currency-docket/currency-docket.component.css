@@ -1,0 +1,8 @@
+.list-item {
+    border-style: ridge;
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
