@@ -8,7 +8,7 @@
 <div class="list-item">
     <form class="form-emp" [formGroup]="currencyForm">
         {{baseSelectedCurrency.primary}}
-        <input formControlName="primary_currency_amount" min=0 (change)="fetchLatestCurrencyData('primary')"
+        <input formControlName="primary_currency_amount" min=0 (keyup)="fetchLatestCurrencyData('primary')"
             type="number" placeholder="Enter amount here">
         <div class="row">
             <mat-form-field appearance="fill">
@@ -21,7 +21,7 @@
                 </mat-select>
             </mat-form-field>
             <input formControlName="secondary_currency_amount" min=0 type="number"
-                (change)="fetchLatestCurrencyData('secondary')" placeholder="Enter amount here">
+                (keyup)="fetchLatestCurrencyData('secondary')" placeholder="Enter amount here">
         </div>
     </form>
     <span>Note: Please make sure a currency is selected and the base currency is valid,Thanks.</span>
